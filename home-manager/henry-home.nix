@@ -5,15 +5,19 @@
     home.stateVersion = "25.05";
 
     home.packages = with pkgs; [
+      code-cursor
       brave
       neovim
       neovide
+      protonvpn-gui
+      heroic
+      gogdl
     ];
 
     programs.git = {
       enable = true;
       userName = "hcwagner";
-      userEmail = "hcwagneriv@gmail.com";
+      userEmail = "hcwagner@pm.me";
     };
 
     programs.fish = {
@@ -23,5 +27,6 @@
 	vi = "nvim";
       };
     };
+
   };
 }
