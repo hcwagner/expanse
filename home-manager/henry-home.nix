@@ -12,6 +12,10 @@
       protonvpn-gui
       heroic
       gogdl
+      rustup
+      silver-searcher
+      protobuf
+      devbox
     ];
 
     programs.git = {

@@ -7,14 +7,14 @@
 let
   home-manager = builtins.fetchTarball {
     url = https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz;
-    sha256 = "1v1r9igz2n7j65rhqspplsq5zg0g1ba4gbkq4042md4nyaf67j24";
+    sha256 = "1qkffckwzyx4k6ngpfzmkc8ajdr20crvzji7pmxlrccwdv73pwq8";
   };
 in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (import "${home-manager}/nixos")
+      #(import "${home-manager}/nixos")
       ./users/default.nix
       ./home-manager/default.nix
     ];
@@ -35,6 +35,9 @@ in
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # Enable docker virt
+  virtualisation.docker.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -132,6 +135,13 @@ in
     neovide
     brave
     alacritty
+    docker
+    glibc
+    autoconf
+    gnumake
+    clang
+    libevent
+    pkg-config
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
